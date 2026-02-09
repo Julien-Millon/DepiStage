@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web4All - Wireframes Phase 2</title>
+    <meta name="description" content="Maquettes wireframe de la plateforme de recherche de stages Web4All">
+    <style>
+        /* RESET & VARIABLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000;
+            --dark: #333;
+            --medium: #666;
+            --light: #999;
+            --lighter: #ccc;
+            --pale: #e0e0e0;
+            --white: #fff;
+            --bg: #f5f5f5;
+            --border: 1px solid #333;
+            --border-light: 1px solid #999;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: var(--bg);
+            color: var(--dark);
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        /* Force tous les liens en noir */
+        a {
+            color: var(--dark);
+        }
+
+        a:visited {
+            color: var(--dark);
+        }
+
+        /* NAV DEMO FIXE */
+        .nav-demo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--dark);
+            color: var(--white);
+            padding: 8px;
+            z-index: 1000;
+            border-bottom: 2px solid var(--black);
+        }
+
+        .nav-demo ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            list-style: none;
+            justify-content: center;
+        }
+
+        .nav-demo a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 4px 8px;
+            border: var(--border-light);
+            font-size: 11px;
+        }
+
+        .nav-demo a:hover {
+            background: var(--medium);
+        }
+
+        /* SECTIONS */
+        .section-wrapper {
+            padding-top: 50px;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 16px;
+            border-bottom: 4px solid var(--dark);
+        }
+
+        .section-title {
+            background: var(--dark);
+            color: var(--white);
+            padding: 8px 12px;
+            margin-bottom: 16px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* HEADER GLOBAL */
+        .header {
+            background: var(--white);
+            border: var(--border);
+            padding: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-logo {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .burger-menu {
+            width: 32px;
+            height: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            border: var(--border);
+            padding: 4px;
+        }
+
+        .burger-menu span {
+            display: block;
+            height: 2px;
+            background: var(--dark);
+        }
+
+        .desktop-nav {
+            display: none;
+        }
+
+        .desktop-nav ul {
+            display: flex;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .desktop-nav a {
+            color: var(--dark);
+            text-decoration: none;
+            padding: 6px 10px;
+            border: var(--border-light);
+            font-size: 11px;
+        }
+
+        .desktop-nav a:hover {
+            background: var(--pale);
+        }
+
+        /* FOOTER GLOBAL */
+        .footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 16px;
+            margin-top: 24px;
+            border: var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 11px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: var(--lighter);
+            text-decoration: underline;
+        }
+
+        .footer-copy {
+            color: var(--light);
+        }
+
+        /* FORMULAIRES & BOUTONS */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: var(--border);
+            background: var(--white);
+            font-family: inherit;
+            font-size: 13px;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            border: 2px solid var(--dark);
+            background: var(--dark);
+            color: var(--white);
+            font-family: inherit;
+            font-size: 13px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background: var(--medium);
+        }
+
+        .btn-outline {
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .btn-outline:hover {
+            background: var(--pale);
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 11px;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        /* LOGIN */
+        #login {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--pale);
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 320px;
+            background: var(--white);
+            border: 2px solid var(--dark);
+            padding: 24px;
+        }
+
+        .login-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--light);
+            border: var(--border);
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .login-title {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: var(--border);
+        }
+
+        .login-links {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .login-links a {
+            color: var(--medium);
+            text-decoration: underline;
+        }
+
+        /* CARROUSEL STATS */
+        .stats-carousel {
+            background: var(--white);
+            border: 2px solid var(--dark);
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        /* SEARCH BOX DOUBLE (Dashboard) */
+        .search-box {
+            background: var(--white);
+            border: 2px solid var(--dark);
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .search-box-header {
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: var(--border);
+        }
+
+        .search-bar-double {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .search-bar-double .form-group {
+            margin-bottom: 0;
+        }
+
+        .search-bar-double .btn {
+            align-self: flex-start;
+        }
+
+        @media (min-width: 768px) {
+            .search-bar-double {
+                flex-direction: row;
+                align-items: flex-end;
+            }
+
+            .search-bar-double .form-group {
+                flex: 1;
+            }
+        }
+
+        .carousel-header {
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: var(--border);
+        }
+
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .carousel-arrow {
+            width: 40px;
+            height: 60px;
+            border: var(--border);
+            background: var(--pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .carousel-content {
+            flex: 1;
+            height: 100px;
+            border: 2px dashed var(--medium);
+            background: var(--pale);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .carousel-content .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .carousel-content .stat-label {
+            font-size: 10px;
+            color: var(--medium);
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border: var(--border);
+            background: var(--white);
+        }
+
+        .carousel-dot.active {
+            background: var(--dark);
+        }
+
+        /* SECTION HEADERS */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: var(--border);
+        }
+
+        .section-header h2 {
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        .section-header a {
+            font-size: 11px;
+            color: var(--medium);
+        }
+
+        /* LISTES & CARDS */
+        .list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .card {
+            background: var(--white);
+            border: var(--border);
+            padding: 12px;
+        }
+
+        .card-mini {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .card-mini .img-placeholder {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+        }
+
+        .card-mini .card-info {
+            flex: 1;
+        }
+
+        .card-mini .card-title {
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .card-mini .card-subtitle {
+            font-size: 11px;
+            color: var(--medium);
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        /* GRILLE CATALOGUE */
+        .search-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px;
+            border: var(--border);
+            font-family: inherit;
+            font-size: 13px;
+        }
+
+        .search-bar .btn-filter {
+            padding: 10px 14px;
+            border: var(--border);
+            background: var(--pale);
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 11px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .offer-card {
+            background: var(--white);
+            border: 2px solid var(--dark);
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .offer-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .offer-card .offer-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .offer-card .offer-company {
+            font-size: 11px;
+            color: var(--medium);
+        }
+
+        .wishlist-icon {
+            width: 28px;
+            height: 28px;
+            border: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            background: var(--white);
+        }
+
+        .wishlist-icon:hover {
+            background: var(--pale);
+        }
+
+        .offer-card .img-placeholder {
+            height: 60px;
+        }
+
+        .offer-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 10px;
+            border-top: var(--border-light);
+        }
+
+        .offer-card .offer-date {
+            font-size: 10px;
+            color: var(--light);
+        }
+
+        /* PAGINATION */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            padding: 16px 0;
+        }
+
+        .pagination-btn {
+            width: 32px;
+            height: 32px;
+            border: var(--border);
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 12px;
+        }
+
+        .pagination-btn:hover {
+            background: var(--pale);
+        }
+
+        .pagination-btn.active {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .pagination-btn.disabled {
+            background: var(--pale);
+            color: var(--light);
+            cursor: not-allowed;
+        }
+
+        /* DETAIL PAGE */
+        .detail-header {
+            background: var(--white);
+            border: var(--border);
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .detail-header .company-name {
+            font-size: 11px;
+            color: var(--medium);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .detail-header .offer-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: var(--border);
+        }
+
+        .detail-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 11px;
+        }
+
+        .detail-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .detail-meta-item .label {
+            color: var(--medium);
+        }
+
+        .detail-section {
+            background: var(--white);
+            border: var(--border);
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .detail-section h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: var(--border);
+        }
+
+        .detail-section p {
+            font-size: 12px;
+            line-height: 1.7;
+            color: var(--medium);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            padding: 5px 10px;
+            border: var(--border);
+            background: var(--pale);
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-top: 2px solid var(--dark);
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .sticky-footer .offer-salary {
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* MODAL POSTULER */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .modal {
+            background: var(--white);
+            border: 2px solid var(--dark);
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: var(--border);
+        }
+
+        .modal-header h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .modal-close {
+            width: 28px;
+            height: 28px;
+            border: var(--border);
+            background: var(--white);
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* TABLES */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+        }
+
+        th,
+        td {
+            border: var(--border);
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background: var(--dark);
+            color: var(--white);
+            text-transform: uppercase;
+            font-size: 10px;
+        }
+
+        tr:nth-child(even) {
+            background: var(--pale);
+        }
+
+        /* PLACEHOLDER IMAGE */
+        .img-placeholder {
+            background: var(--lighter);
+            border: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .img-placeholder::before {
+            content: "IMG";
+            color: var(--medium);
+            font-size: 11px;
+        }
+
+        .img-placeholder::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom right, transparent calc(50% - 1px), var(--light), transparent calc(50% + 1px)), linear-gradient(to bottom left, transparent calc(50% - 1px), var(--light), transparent calc(50% + 1px));
+        }
+
+        /* RESPONSIVE DESKTOP */
+        @media (min-width: 768px) {
+            section {
+                padding: 20px 40px;
+            }
+
+            .burger-menu {
+                display: none;
+            }
+
+            .desktop-nav {
+                display: block;
+            }
+
+            .results-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            .search-bar {
+                max-width: 600px;
+            }
+
+            .detail-header .offer-title {
+                font-size: 22px;
+            }
+
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .login-container {
+                max-width: 380px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            section {
+                padding: 24px 60px;
+            }
+
+            .results-grid {
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV DEMO -->
+    <nav class="nav-demo">
+        <ul>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#catalogue">Offres</a></li>
+            <li><a href="#detail">Détail</a></li>
+            <li><a href="#entreprises">Entreprises</a></li>
+            <li><a href="#entreprise-detail">Fiche Entrep.</a></li>
+            <li><a href="#wishlist">Wishlist</a></li>
+            <li><a href="#candidatures">Candidatures</a></li>
+            <li><a href="#admin">Admin</a></li>
+            <li><a href="#mentions">Mentions</a></li>
+        </ul>
+    </nav>
+
+    <div class="section-wrapper">
+
+        <!-- ========== VUE 1: LOGIN (SFx 1) ========== -->
+        <section id="login">
+            <div class="section-title">Login - Authentification (SFx 1)</div>
+            <div class="login-container">
+                <div class="login-logo">LOGO</div>
+                <h1 class="login-title">Web4All</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="votre@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" placeholder="••••••••">
+                    </div>
+                    <a href="#dashboard" class="btn btn-block">Se connecter</a>
+                </form>
+                <div class="login-links">
+                    <a href="#">Mot de passe oublié ?</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== VUE 2: DASHBOARD (SFx 11) ========== -->
+        <section id="dashboard">
+            <div class="section-title">Dashboard - Accueil (SFx 11)</div>
+            <header class="header">
+                <a href="#dashboard" class="header-logo">[Web4All]</a>
+                <div class="burger-menu"><span></span><span></span><span></span></div>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#dashboard">Accueil</a></li>
+                        <li><a href="#catalogue">Offres</a></li>
+                        <li><a href="#entreprises">Entreprises</a></li>
+                        <li><a href="#wishlist">Wishlist</a></li>
+                        <li><a href="#candidatures">Candidatures</a></li>
+                        <li><a href="#login">Déconnexion</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="search-box">
+                <div class="search-box-header">Rechercher</div>
+                <div class="search-bar-double">
+                    <div class="form-group">
+                        <label for="search-type">Je recherche</label>
+                        <select id="search-type">
+                            <option value="offres">Une offre de stage</option>
+                            <option value="entreprises">Une entreprise</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="search-terme">Mot-clé</label>
+                        <input type="text" id="search-terme" placeholder="Ex: Développeur, TechCorp...">
+                    </div>
+                    <div class="form-group">
+                        <label for="search-lieu">Lieu</label>
+                        <input type="text" id="search-lieu" placeholder="Ex: Paris, Lyon...">
+                    </div>
+                    <a href="#catalogue" class="btn">Rechercher</a>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Dernières offres</h2>
+                <a href="#catalogue">Voir tout &rarr;</a>
+            </div>
+            <div class="list-container">
+                <a href="#detail" class="card card-mini">
+                    <div class="img-placeholder"></div>
+                    <div class="card-info">
+                        <div class="card-title">Développeur Web Junior</div>
+                        <div class="card-subtitle">TechCorp SA</div>
+                    </div>
+                </a>
+                <a href="#detail" class="card card-mini">
+                    <div class="img-placeholder"></div>
+                    <div class="card-info">
+                        <div class="card-title">Stage UX Designer</div>
+                        <div class="card-subtitle">DesignStudio</div>
+                    </div>
+                </a>
+            </div>
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <a href="#mentions">Mentions légales</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="footer-copy">© 2026 Web4All - CESI</div>
+                </div>
+            </footer>
+        </section>
+
+        <!-- ========== VUE 3: CATALOGUE OFFRES (SFx 7, SFx 27) ========== -->
+        <section id="catalogue">
+            <div class="section-title">Catalogue - Recherche (SFx 2, SFx 7, SFx 27)</div>
+            <header class="header">
+                <a href="#dashboard" class="header-logo">[Web4All]</a>
+                <div class="burger-menu"><span></span><span></span><span></span></div>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#dashboard">Accueil</a></li>
+                        <li><a href="#catalogue">Offres</a></li>
+                        <li><a href="#entreprises">Entreprises</a></li>
+                        <li><a href="#wishlist">Wishlist</a></li>
+                        <li><a href="#candidatures">Candidatures</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="stats-carousel">
+                <div class="carousel-header">Statistiques des offres (SFx 11)</div>
+                <div class="carousel-container">
+                    <div class="carousel-arrow">&lt;</div>
+                    <div class="carousel-content">
+                        <div class="stat-number">247</div>
+                        <div class="stat-label">Offres disponibles</div>
+                    </div>
+                    <div class="carousel-arrow">&gt;</div>
+                </div>
+                <div class="carousel-indicators">
+                    <div class="carousel-dot active"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                </div>
+            </div>
+
+            <div class="search-bar-double">
+                <div class="form-group">
+                    <label for="cat-search-type">Je recherche</label>
+                    <select id="cat-search-type">
+                        <option value="offres">Une offre de stage</option>
+                        <option value="entreprises">Une entreprise</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cat-search-terme">Mot-clé</label>
+                    <input type="text" id="cat-search-terme" placeholder="Ex: Développeur, TechCorp...">
+                </div>
+                <div class="form-group">
+                    <label for="cat-search-lieu">Lieu</label>
+                    <input type="text" id="cat-search-lieu" placeholder="Ex: Paris, Lyon...">
+                </div>
+                <button class="btn">Rechercher</button>
+                <button class="btn-filter">Filtres</button>
+            </div>
+
+            <div class="results-grid">
+                <div class="offer-card">
+                    <div class="offer-card-header">
+                        <div>
+                            <div class="offer-title">Développeur Frontend</div>
+                            <div class="offer-company">TechCorp SA</div>
+                        </div>
+                        <div class="wishlist-icon">♡</div>
+                    </div>
+                    <div class="img-placeholder"></div>
+                    <div class="offer-card-footer">
+                        <span class="offer-date">Il y a 2j</span>
+                        <a href="#detail" class="btn btn-small">Voir</a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-card-header">
+                        <div>
+                            <div class="offer-title">UX/UI Designer</div>
+                            <div class="offer-company">DesignStudio</div>
+                        </div>
+                        <div class="wishlist-icon">♡</div>
+                    </div>
+                    <div class="img-placeholder"></div>
+                    <div class="offer-card-footer">
+                        <span class="offer-date">Il y a 3j</span>
+                        <a href="#detail" class="btn btn-small">Voir</a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-card-header">
+                        <div>
+                            <div class="offer-title">Data Analyst</div>
+                            <div class="offer-company">DataInsights</div>
+                        </div>
+                        <div class="wishlist-icon">♡</div>
+                    </div>
+                    <div class="img-placeholder"></div>
+                    <div class="offer-card-footer">
+                        <span class="offer-date">Il y a 5j</span>
+                        <a href="#detail" class="btn btn-small">Voir</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="pagination-btn disabled">&lt;</button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn">&gt;</button>
+            </div>
+        </section>
+
+        <!-- ========== VUE 4: DETAIL OFFRE (SFx 20) ========== -->
+        <section id="detail" style="padding-bottom: 80px;">
+            <div class="section-title">Détail Offre (SFx 20)</div>
+            <header class="header">
+                <a href="#dashboard" class="header-logo">[Web4All]</a>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#catalogue">&larr; Retour</a></li>
+                        <li><a href="#wishlist">Wishlist</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="detail-header">
+                <div class="company-name">TechCorp SA</div>
+                <h1 class="offer-title">Développeur Frontend React</h1>
+                <div class="detail-meta">
+                    <div class="detail-meta-item"><span class="label">Lieu:</span><span>Paris</span></div>
+                    <div class="detail-meta-item"><span class="label">Durée:</span><span>6 mois</span></div>
+                    <div class="detail-meta-item"><span class="label">Candidats:</span><span>23</span></div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>Description</h3>
+                <p>[Zone de texte - Description de l'offre]<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit.</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Compétences</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>Entreprise</h3>
+                <p>[Infos entreprise] - <a href="#entreprise-detail">Voir la fiche</a></p>
+            </div>
+
+            <div class="sticky-footer">
+                <div class="offer-salary">600€ - 800€ /mois</div>
+                <a href="#postuler" class="btn">Postuler</a>
+            </div>
+        </section>
+
+        <!-- ========== VUE 5: LISTE ENTREPRISES (SFx 2) ========== -->
+        <section id="entreprises">
+            <div class="section-title">Entreprises (SFx 2)</div>
+            <header class="header">
+                <a href="#dashboard" class="header-logo">[Web4All]</a>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#dashboard">Accueil</a></li>
+                        <li><a href="#catalogue">Offres</a></li>
+                        <li><a href="#entreprises">Entreprises</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher une entreprise...">
+                <button class="btn-filter">Filtres</button>
+            </div>
+
+            <div class="list-container">
+                <a href="#entreprise-detail" class="card card-mini">
+                    <div class="img-placeholder"></div>
+                    <div class="card-info">
+                        <div class="card-title">TechCorp SA</div>
+                        <div class="card-subtitle">12 offres - ★ 4.2/5</div>
+                    </div>
+                </a>
+                <a href="#entreprise-detail" class="card card-mini">
+                    <div class="img-placeholder"></div>
+                    <div class="card-info">
+                        <div class="card-title">DesignStudio</div>
+                        <div class="card-subtitle">5 offres - ★ 4.8/5</div>
+                    </div>
+                </a>
+                <a href="#entreprise-detail" class="card card-mini">
+                    <div class="img-placeholder"></div>
+                    <div class="card-info">
+                        <div class="card-title">DataInsights</div>
+                        <div class="card-subtitle">8 offres - ★ 3.9/5</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="pagination">
+                <button class="pagination-btn disabled">&lt;</button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">&gt;</button>
+            </div>
+        </section>
+
+        <!-- ========== VUE 6: DETAIL ENTREPRISE (SFx 2, SFx 5) ========== -->
+        <section id="entreprise-detail">
+            <div class="section-title">Fiche Entreprise (SFx 2, SFx 5)</div>
+            <header class="header">
+                <a href="#dashboard" class="header-logo">[Web4All]</a>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#entreprises">&larr; Retour</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="detail-header">
+                <h1 class="offer-title">TechCorp SA</h1>
+                <div class="detail-meta">
+                    <div class="detail-meta-item"><span class="label">Stagiaires:</span><span>45</span></div>
+                    <div class="detail-meta-item"><span class="label">Note:</span><span>★ 4.2/5</span></div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>Description</h3>
+                <p>[Description de l'entreprise]</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Contact</h3>
+                <p>Email: contact@techcorp.fr<br>Tél: 01 23 45 67 89</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Évaluer (SFx 5)</h3>
+                <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+                    <span class="skill-tag">☆</span>
+                    <span class="skill-tag">☆</span>
+                    <span class="skill-tag">☆</span>
+                    <span class="skill-tag">☆</span>
+                    <span class="skill-tag">☆</span>
+                </div>
+                <button class="btn btn-small">Envoyer</button>
+            </div>
+
+            <div class="section-header">
+                <h2>Offres de cette entreprise</h2>
+            </div>
+            <div class="list-container">
+                <a href="#detail" class="card card-mini">
+                    <div class="img-placeholder"></div>
+                    <div class="card-info">
+                        <div class="card-title">Développeur Frontend</div>
+                        <div class="card-subtitle">6 mois - Paris</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- ========== VUE 7: WISHLIST (SFx 23, 24, 25) ========== -->
+        <section id="wishlist">
+            <div class="section-title">Wishlist (SFx 23, 24, 25)</div>
+            <header class="header">
+                <a href="#dashboard" class="header-logo">[Web4All]</a>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#dashboard">Accueil</a></li>
+                        <li><a href="#catalogue">Offres</a></li>
+                        <li><a href="#wishlist">Wishlist</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="list-container">
+                <div class="card card-mini">
+                    <div class="img-placeholder"></div>
+                    <div class="card-info">
+                        <div class="card-title">Développeur Frontend</div>
+                        <div class="card-subtitle">TechCorp SA</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#detail" class="btn btn-small btn-outline">Voir</a>
+                        <button class="btn btn-small">Retirer</button>
+                    </div>
+                </div>
+                <div class="card card-mini">
+                    <div class="img-placeholder"></div>
+                    <div class="card-info">
+                        <div class="card-title">UX Designer</div>
+                        <div class="card-subtitle">DesignStudio</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#detail" class="btn btn-small btn-outline">Voir</a>
+                        <button class="btn btn-small">Retirer</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== VUE 8: CANDIDATURES (SFx 21) ========== -->
+        <section id="candidatures">
+            <div class="section-title">Mes Candidatures (SFx 21)</div>
+            <header class="header">
+                <a href="#dashboard" class="header-logo">[Web4All]</a>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#dashboard">Accueil</a></li>
+                        <li><a href="#catalogue">Offres</a></li>
+                        <li><a href="#candidatures">Candidatures</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Offre</th>
+                            <th>Entreprise</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Développeur Frontend</td>
+                            <td>TechCorp SA</td>
+                            <td>01/02/2026</td>
+                            <td><a href="#detail" class="btn btn-small">Voir</a></td>
+                        </tr>
+                        <tr>
+                            <td>UX Designer</td>
+                            <td>DesignStudio</td>
+                            <td>28/01/2026</td>
+                            <td><a href="#detail" class="btn btn-small">Voir</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <button class="pagination-btn disabled">&lt;</button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">&gt;</button>
+            </div>
+        </section>
+
+        <!-- ========== VUE 9: ADMIN (SFx 12-19) ========== -->
+        <section id="admin">
+            <div class="section-title">Administration (SFx 12-19)</div>
+            <header class="header">
+                <a href="#dashboard" class="header-logo">[Web4All Admin]</a>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#dashboard">Accueil</a></li>
+                        <li><a href="#admin">Admin</a></li>
+                        <li><a href="#login">Déconnexion</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px;">
+                <div class="card" style="text-align: center; padding: 20px;">
+                    <div style="font-size: 24px; font-weight: bold;">45</div>
+                    <div style="font-size: 11px; color: var(--medium);">ÉTUDIANTS</div>
+                    <div class="card-actions" style="justify-content: center; margin-top: 12px;">
+                        <button class="btn btn-small">Gérer</button>
+                    </div>
+                </div>
+                <div class="card" style="text-align: center; padding: 20px;">
+                    <div style="font-size: 24px; font-weight: bold;">8</div>
+                    <div style="font-size: 11px; color: var(--medium);">PILOTES</div>
+                    <div class="card-actions" style="justify-content: center; margin-top: 12px;">
+                        <button class="btn btn-small">Gérer</button>
+                    </div>
+                </div>
+                <div class="card" style="text-align: center; padding: 20px;">
+                    <div style="font-size: 24px; font-weight: bold;">32</div>
+                    <div style="font-size: 11px; color: var(--medium);">ENTREPRISES</div>
+                    <div class="card-actions" style="justify-content: center; margin-top: 12px;">
+                        <button class="btn btn-small">Gérer</button>
+                    </div>
+                </div>
+                <div class="card" style="text-align: center; padding: 20px;">
+                    <div style="font-size: 24px; font-weight: bold;">247</div>
+                    <div style="font-size: 11px; color: var(--medium);">OFFRES</div>
+                    <div class="card-actions" style="justify-content: center; margin-top: 12px;">
+                        <button class="btn btn-small">Gérer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>Actions rapides</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <button class="btn btn-outline">+ Étudiant (SFx 17)</button>
+                    <button class="btn btn-outline">+ Pilote (SFx 13)</button>
+                    <button class="btn btn-outline">+ Entreprise (SFx 3)</button>
+                    <button class="btn btn-outline">+ Offre (SFx 8)</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== VUE 10: MENTIONS LÉGALES (SFx 28) ========== -->
+        <section id="mentions">
+            <div class="section-title">Mentions Légales (SFx 28)</div>
+            <header class="header">
+                <a href="#dashboard" class="header-logo">[Web4All]</a>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#dashboard">&larr; Retour</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="detail-section">
+                <h3>Éditeur du site</h3>
+                <p>Web4All - Projet CESI<br>Adresse: [Adresse]<br>Email: contact@web4all.fr</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Hébergement</h3>
+                <p>[Informations hébergeur]</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Protection des données (RGPD)</h3>
+                <p>[Politique de confidentialité et gestion des données personnelles]</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Cookies</h3>
+                <p>[Politique d'utilisation des cookies]</p>
+            </div>
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <a href="#mentions">Mentions légales</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="footer-copy">© 2026 Web4All - CESI</div>
+                </div>
+            </footer>
+        </section>
+
+    </div>
+</body>
+
+</html>

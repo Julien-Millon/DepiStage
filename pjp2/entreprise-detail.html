@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSolutions - Dépi'Stage</title>
+    <meta name="description" content="Fiche entreprise TechSolutions - Dépi'Stage">
+    <link rel="icon" type="image/png" href="logo/depistage.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="dashboard.html" class="logo">
+                <div class="logo-icon">
+                    <img src="logo/depistage.png" alt="Dépi'Stage Logo">
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">Dépi'Stage</span>
+                </div>
+            </a>
+
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="catalogue.html" class="nav-link">Offres de stage</a></li>
+                    <li><a href="entreprises.html" class="nav-link">Entreprises</a></li>
+                    <li><a href="mentions.html" class="nav-link">Mentions Légales</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="login.html" class="btn-connexion">CONNEXION</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <section class="section detail-page">
+            <div class="container">
+                <a href="entreprises.html" class="back-link">&larr; Retour aux entreprises</a>
+
+                <!-- Header Entreprise -->
+                <div class="detail-header">
+                    <div class="entreprise-logo"
+                        style="width: 100px; height: 100px; font-size: 2.5rem; margin: 0 0 16px 0;">T</div>
+                    <h1 class="detail-title">TechSolutions</h1>
+                    <p style="color: var(--text-muted);">Développement web & Applications métier</p>
+                    <div class="detail-meta">
+                        <div class="detail-meta-item">
+                            <div class="icon">Lieu</div>
+                            <div>
+                                <div class="value">Lyon, France</div>
+                            </div>
+                        </div>
+                        <div class="detail-meta-item">
+                            <div class="icon">Taille</div>
+                            <div>
+                                <div class="value">150 employés</div>
+                            </div>
+                        </div>
+                        <div class="detail-meta-item">
+                            <div class="icon">Note</div>
+                            <div>
+                                <div class="value">4.2 / 5</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="detail-section">
+                    <h3>À propos</h3>
+                    <p>
+                        TechSolutions est une entreprise leader dans le développement de solutions digitales innovantes.
+                        Avec plus de 150 employés répartis sur 3 sites en France, nous accompagnons nos clients dans
+                        leur
+                        transformation numérique depuis 2010.
+                    </p>
+                    <p>
+                        Notre expertise couvre le développement web, les applications mobiles, le cloud computing et
+                        l'intelligence
+                        artificielle. Nous travaillons avec des clients de toutes tailles, des startups aux grands
+                        groupes.
+                    </p>
+                </div>
+
+                <!-- Statistiques -->
+                <div class="admin-stats" style="margin-bottom: 32px;">
+                    <div class="stat-card">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Offres actives</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">45</div>
+                        <div class="stat-label">Stagiaires accueillis</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Taux d'embauche</div>
+                    </div>
+                </div>
+
+                <!-- Offres de l'entreprise -->
+                <div class="detail-section">
+                    <h3>Offres de stage actuelles</h3>
+                    <div class="grid grid-2" style="margin-top: 16px;">
+                        <div class="offer-card">
+                            <div class="offer-card-header">
+                                <div>
+                                    <div class="offer-title">Développeur Web Frontend</div>
+                                    <div class="offer-company">TechSolutions</div>
+                                </div>
+                            </div>
+                            <div class="offer-tags">
+                                <span class="tag">Lyon</span>
+                                <span class="tag">4 mois</span>
+                            </div>
+                            <div class="offer-card-footer">
+                                <a href="e-offre-detail.html" class="btn btn-dark btn-sm">Voir l'offre</a>
+                            </div>
+                        </div>
+
+                        <div class="offer-card">
+                            <div class="offer-card-header">
+                                <div>
+                                    <div class="offer-title">Développeur Backend Node.js</div>
+                                    <div class="offer-company">TechSolutions</div>
+                                </div>
+                            </div>
+                            <div class="offer-tags">
+                                <span class="tag">Lyon</span>
+                                <span class="tag">6 mois</span>
+                            </div>
+                            <div class="offer-card-footer">
+                                <a href="e-offre-detail.html" class="btn btn-dark btn-sm">Voir l'offre</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SFx5 : Évaluation entreprise -->
+                <div class="detail-section">
+                    <h3>Évaluer cette entreprise</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 16px;">
+                        Vous avez effectué un stage chez TechSolutions ? Partagez votre expérience !
+                    </p>
+                    <form action="entreprise-detail.html" method="get">
+                        <div class="form-group">
+                            <label class="form-label">Votre note</label>
+                            <select class="form-input form-select">
+                                <option value="5">5 - Excellent</option>
+                                <option value="4">4 - Très bien</option>
+                                <option value="3">3 - Bien</option>
+                                <option value="2">2 - Moyen</option>
+                                <option value="1">1 - À éviter</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Votre commentaire</label>
+                            <textarea class="form-input form-textarea"
+                                placeholder="Décrivez votre expérience..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Soumettre mon évaluation</button>
+                    </form>
+                </div>
+
+                <!-- Avis existants -->
+                <div class="detail-section">
+                    <h3>Avis des anciens stagiaires</h3>
+                    <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+                        <div class="candidature-card">
+                            <div class="company-logo" style="background: var(--success); color: white;">5</div>
+                            <div class="candidature-info">
+                                <div class="candidature-title">Super expérience !</div>
+                                <div class="candidature-company">Équipe très accueillante et projets intéressants. J'ai
+                                    beaucoup appris.</div>
+                            </div>
+                        </div>
+                        <div class="candidature-card">
+                            <div class="company-logo" style="background: var(--success); color: white;">4</div>
+                            <div class="candidature-info">
+                                <div class="candidature-title">Très bonne entreprise</div>
+                                <div class="candidature-company">Ambiance de travail agréable et missions variées. Je
+                                    recommande.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="dashboard.html" class="logo">
+                        <div class="logo-icon">
+                            <img src="logo/depistage.png" alt="Dépi'Stage Logo"
+                                style="filter: brightness(0) invert(1);">
+                        </div>
+                        <span>Dépi'Stage</span>
+                    </a>
+                    <p class="footer-text">Sans stage, t'es au chômage !</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Légal</h4>
+                        <ul>
+                            <li><a href="mentions.html">Mentions légales</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2026 Dépi'Stage - CESI</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offres de stage - Dépi'Stage</title>
+    <meta name="description" content="Découvrez toutes les offres de stage disponibles sur Dépi'Stage.">
+    <link rel="icon" type="image/png" href="logo/depistage.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="dashboard.html" class="logo">
+                <div class="logo-icon">
+                    <img src="logo/depistage.png" alt="Dépi'Stage Logo">
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">Dépi'Stage</span>
+                </div>
+            </a>
+
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="catalogue.html" class="nav-link active">Offres de stage</a></li>
+                    <li><a href="entreprises.html" class="nav-link">Entreprises</a></li>
+                    <li><a href="mentions.html" class="nav-link">Mentions Légales</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="login.html" class="btn-connexion">CONNEXION</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <!-- Search Box -->
+                <div class="search-box">
+                    <form action="catalogue.html" method="get" class="search-box-inline">
+                        <div class="form-group" style="flex: 2;">
+                            <input type="text" name="q" class="form-input"
+                                placeholder="Rechercher un stage, une entreprise ou une ville...">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">RECHERCHER</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <section class="section" style="padding-top: 40px;">
+            <div class="container">
+                <!-- Stats Carousel (statique) -->
+                <div class="stats-carousel">
+                    <div class="carousel-header">Statistiques des offres</div>
+                    <div class="admin-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">247</div>
+                            <div class="stat-label">Offres disponibles</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">32%</div>
+                            <div class="stat-label">Stages 2-3 mois</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">45%</div>
+                            <div class="stat-label">Stages 4-6 mois</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">8.5</div>
+                            <div class="stat-label">Candidatures/offre</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Grid -->
+                <div class="grid grid-3">
+                    <!-- Offer 1 -->
+                    <div class="offer-card">
+                        <div class="offer-card-header">
+                            <div>
+                                <div class="offer-title">Stage Développeur Web</div>
+                                <div class="offer-company">TechSolutions</div>
+                            </div>
+                            <a href="e-wishlist.html" class="wishlist-btn">&#9825;</a>
+                        </div>
+                        <div class="offer-tags">
+                            <span class="tag">Lyon</span>
+                            <span class="tag">2 mois</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">
+                            Tu es passionné par le développement web ? Rejoins notre équipe dynamique pour travailler
+                            sur des projets innovants.
+                        </p>
+                        <div class="offer-card-footer">
+                            <a href="e-offre-detail.html" class="btn btn-dark btn-sm">Voir l'offre</a>
+                        </div>
+                    </div>
+
+                    <!-- Offer 2 -->
+                    <div class="offer-card">
+                        <div class="offer-card-header">
+                            <div>
+                                <div class="offer-title">Stage Graphiste</div>
+                                <div class="offer-company">Studio Créa</div>
+                            </div>
+                            <a href="e-wishlist.html" class="wishlist-btn">&#9825;</a>
+                        </div>
+                        <div class="offer-tags">
+                            <span class="tag">Paris</span>
+                            <span class="tag">1 mois</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">
+                            Créativité et rigueur sont tes maîtres mots ? Nous cherchons un stagiaire pour nous aider à
+                            concevoir des identités visuelles.
+                        </p>
+                        <div class="offer-card-footer">
+                            <a href="e-offre-detail.html" class="btn btn-dark btn-sm">Voir l'offre</a>
+                        </div>
+                    </div>
+
+                    <!-- Offer 3 -->
+                    <div class="offer-card">
+                        <div class="offer-card-header">
+                            <div>
+                                <div class="offer-title">Stage Marketing Digital</div>
+                                <div class="offer-company">DigiAgency</div>
+                            </div>
+                            <a href="e-wishlist.html" class="wishlist-btn">&#9825;</a>
+                        </div>
+                        <div class="offer-tags">
+                            <span class="tag">Bordeaux</span>
+                            <span class="tag">3 mois</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">
+                            Passionné par les réseaux sociaux et le SEO ? Rejoins notre équipe pour développer la
+                            stratégie digitale de nos clients.
+                        </p>
+                        <div class="offer-card-footer">
+                            <a href="e-offre-detail.html" class="btn btn-dark btn-sm">Voir l'offre</a>
+                        </div>
+                    </div>
+
+                    <!-- Offer 4 -->
+                    <div class="offer-card">
+                        <div class="offer-card-header">
+                            <div>
+                                <div class="offer-title">Stage Data Analyst</div>
+                                <div class="offer-company">DataInsights</div>
+                            </div>
+                            <a href="e-wishlist.html" class="wishlist-btn">&#9825;</a>
+                        </div>
+                        <div class="offer-tags">
+                            <span class="tag">Nantes</span>
+                            <span class="tag">6 mois</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">
+                            Tu aimes analyser des données et en tirer des insights ? Rejoins notre équipe data.
+                        </p>
+                        <div class="offer-card-footer">
+                            <a href="e-offre-detail.html" class="btn btn-dark btn-sm">Voir l'offre</a>
+                        </div>
+                    </div>
+
+                    <!-- Offer 5 -->
+                    <div class="offer-card">
+                        <div class="offer-card-header">
+                            <div>
+                                <div class="offer-title">Stage Product Manager</div>
+                                <div class="offer-company">StartupXYZ</div>
+                            </div>
+                            <a href="e-wishlist.html" class="wishlist-btn">&#9825;</a>
+                        </div>
+                        <div class="offer-tags">
+                            <span class="tag">Paris</span>
+                            <span class="tag">4 mois</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">
+                            Tu as le sens du produit et de la stratégie ? Rejoins une startup en pleine croissance !
+                        </p>
+                        <div class="offer-card-footer">
+                            <a href="e-offre-detail.html" class="btn btn-dark btn-sm">Voir l'offre</a>
+                        </div>
+                    </div>
+
+                    <!-- Offer 6 -->
+                    <div class="offer-card">
+                        <div class="offer-card-header">
+                            <div>
+                                <div class="offer-title">Stage Mobile Developer</div>
+                                <div class="offer-company">AppFactory</div>
+                            </div>
+                            <a href="e-wishlist.html" class="wishlist-btn">&#9825;</a>
+                        </div>
+                        <div class="offer-tags">
+                            <span class="tag">Lyon</span>
+                            <span class="tag">3 mois</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">
+                            Passionné par le mobile ? Développe des apps iOS et Android avec React Native et Flutter.
+                        </p>
+                        <div class="offer-card-footer">
+                            <a href="e-offre-detail.html" class="btn btn-dark btn-sm">Voir l'offre</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="#" class="pagination-btn disabled">&lsaquo;</a>
+                    <a href="#" class="pagination-btn active">1</a>
+                    <a href="#" class="pagination-btn">2</a>
+                    <a href="#" class="pagination-btn">3</a>
+                    <a href="#" class="pagination-btn">&rsaquo;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="dashboard.html" class="logo">
+                        <div class="logo-icon">
+                            <img src="logo/depistage.png" alt="Dépi'Stage Logo"
+                                style="filter: brightness(0) invert(1);">
+                        </div>
+                        <span>Dépi'Stage</span>
+                    </a>
+                    <p class="footer-text">Sans stage, t'es au chômage ! La plateforme de référence pour trouver votre
+                        stage idéal.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Légal</h4>
+                        <ul>
+                            <li><a href="mentions.html">Mentions légales</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2026 Dépi'Stage - CESI</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

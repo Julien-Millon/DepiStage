@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Wishlist - Dépi'Stage</title>
+    <meta name="description" content="Vos offres sauvegardées sur Dépi'Stage.">
+    <link rel="icon" type="image/png" href="logo/depistage.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="dashboard.html" class="logo">
+                <div class="logo-icon">
+                    <img src="logo/depistage.png" alt="Dépi'Stage Logo">
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">Dépi'Stage</span>
+                </div>
+            </a>
+
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="dashboard.html" class="nav-link">Accueil</a></li>
+                    <li><a href="catalogue.html" class="nav-link">Offres</a></li>
+                    <li><a href="entreprises.html" class="nav-link">Entreprises</a></li>
+                    <li><a href="e-candidatures.html" class="nav-link">Mes candidatures</a></li>
+                    <li><a href="e-wishlist.html" class="nav-link active">Wishlist</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="login.html" class="btn-connexion">DÉCONNEXION</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <section class="section">
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="page-title">Ma Wishlist</h1>
+                    <p class="page-subtitle">SFx23-25 : Gérez vos offres favorites</p>
+                </div>
+
+                <!-- SFx25 : Afficher les offres sauvegardées -->
+                <div class="offers-grid">
+                    <!-- Offre 1 -->
+                    <div class="offer-card">
+                        <div class="offer-card-header">
+                            <div>
+                                <div class="offer-title">Stage Développeur Web</div>
+                                <div class="offer-company">TechSolutions</div>
+                            </div>
+                            <!-- SFx24 : Retirer de la wishlist -->
+                            <a href="e-wishlist.html" class="wishlist-btn active"
+                                title="Retirer de la wishlist">&#9829;</a>
+                        </div>
+                        <div class="offer-tags">
+                            <span class="tag">Lyon</span>
+                            <span class="tag">2 mois</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">
+                            Tu es passionné par le développement web ? Rejoins notre équipe dynamique pour travailler
+                            sur des projets innovants.
+                        </p>
+                        <div class="offer-card-footer">
+                            <a href="e-offre-detail.html" class="btn btn-dark btn-sm">Voir l'offre</a>
+                        </div>
+                    </div>
+
+                    <!-- Offre 2 -->
+                    <div class="offer-card">
+                        <div class="offer-card-header">
+                            <div>
+                                <div class="offer-title">UX/UI Designer</div>
+                                <div class="offer-company">Studio Créa</div>
+                            </div>
+                            <a href="e-wishlist.html" class="wishlist-btn active"
+                                title="Retirer de la wishlist">&#9829;</a>
+                        </div>
+                        <div class="offer-tags">
+                            <span class="tag">Paris</span>
+                            <span class="tag">4 mois</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">
+                            Rejoins notre studio créatif pour concevoir des interfaces utilisateur innovantes et
+                            intuitives.
+                        </p>
+                        <div class="offer-card-footer">
+                            <a href="e-offre-detail.html" class="btn btn-dark btn-sm">Voir l'offre</a>
+                        </div>
+                    </div>
+
+                    <!-- Offre 3 -->
+                    <div class="offer-card">
+                        <div class="offer-card-header">
+                            <div>
+                                <div class="offer-title">Data Analyst Junior</div>
+                                <div class="offer-company">DataInsights</div>
+                            </div>
+                            <a href="e-wishlist.html" class="wishlist-btn active"
+                                title="Retirer de la wishlist">&#9829;</a>
+                        </div>
+                        <div class="offer-tags">
+                            <span class="tag">Bordeaux</span>
+                            <span class="tag">6 mois</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">
+                            Participe à l'analyse de données pour aider nos clients à prendre de meilleures décisions.
+                        </p>
+                        <div class="offer-card-footer">
+                            <a href="e-offre-detail.html" class="btn btn-dark btn-sm">Voir l'offre</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SFx27 : Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn disabled">&lsaquo;</button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">&rsaquo;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="dashboard.html" class="logo">
+                        <div class="logo-icon">
+                            <img src="logo/depistage.png" alt="Dépi'Stage Logo"
+                                style="filter: brightness(0) invert(1);">
+                        </div>
+                        <span>Dépi'Stage</span>
+                    </a>
+                    <p class="footer-text">Sans stage, t'es au chômage !</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Légal</h4>
+                        <ul>
+                            <li><a href="mentions.html">Mentions légales</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2026 Dépi'Stage - CESI</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
